@@ -371,11 +371,7 @@ func (m *Model) LoadById() error {
 }
 
 func (m *Model) LoadAndSetId(id uint32) error {
-	fmt.Println("1:",m.GetDB())
-	fmt.Println("2:",m.GetDB().First(m.parent),"id=?",id)
 	d := m.GetDB().First(m.parent, "id = ?", id)
-	fmt.Printf("d:%+v\n",d)
-
 	return m.parent.(IModelParent).FormatError(d.Error)
 }
 func (m *Model) LoadByKey(key string, val interface{}) error {

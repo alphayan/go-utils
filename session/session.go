@@ -20,7 +20,7 @@ import (
 	"net/http/httptest"
 	"time"
 
-	"github.com/jinzhu/copier"
+	"github.com/alphayan/copier"
 )
 
 type XSession struct {
